@@ -287,3 +287,88 @@ dialog{inset:5vh 0 auto;border-radius:26px;height:90dvh;max-height:90dvh}
 .inline-rest span{flex:1;font-size:12px}
 .inline-rest button{background:#2b5978;padding:8px;border-radius:9px;min-height:36px;font-size:12px}
 
+
+.segmented.sessions{flex-wrap:wrap}.segmented.sessions button{flex:1 1 30%}
+
+/* ===== Astra 4.5 · Apple-grade layer (iOS 26 dark) =====
+   Content is opaque, navigation is glass. One tint (blue) for actions; green = done; neutral grey = not yet. */
+:root{--bg:#000;--panel:#1C1C1E;--panel2:#2C2C2E;--line:rgba(84,84,88,.6);--text:#fff;--muted:rgba(235,235,245,.6);--faint:rgba(235,235,245,.3);--fill:rgba(120,120,128,.24);--fill2:rgba(120,120,128,.36);--blue:#0091FF;--mint:#30D158;--green:#30D158;--orange:#FF9230;--purple:#DB34F2;--indigo:#6D7CFF;--gold:#FFD600;--radius:26px;--shadow:none;--snappy:cubic-bezier(.3,1.25,.6,1)}
+html,body{background:#000}
+body{font-family:-apple-system,system-ui,"SF Pro Text",BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:17px;line-height:1.3;letter-spacing:-.2px}
+h1{font-size:34px;line-height:41px;font-weight:700;letter-spacing:.2px}
+h2{font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.3px}
+h3{font-size:17px;line-height:22px;font-weight:600}
+.sub{font-size:15px;line-height:20px;color:var(--muted)}
+small,.text-small{font-size:13px;line-height:18px;color:var(--muted)}
+a,.text-btn{color:var(--blue)}
+.text-btn{font-size:17px;font-weight:400;background:none}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+/* numbers: rounded + tabular */
+.hero-content h1,.goal-badge b,.metric strong,.stat-box strong,.hero-footer b,.day-circle,.ring-inner strong,.rest-bar b,.set-row input{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-variant-numeric:tabular-nums}
+/* no all-caps labels: sentence case */
+.eyebrow{text-transform:lowercase;letter-spacing:0;font-size:15px;font-weight:600;color:var(--muted)}
+.eyebrow::first-letter{text-transform:uppercase}
+.footer-note{display:none}
+/* opaque content cards, concentric radii */
+.card,.callout,.food-tile,.workout-feature{background:var(--panel);border:0;box-shadow:none;border-radius:26px}
+.callout{padding:16px;gap:12px}.callout .icon{color:var(--blue)}
+.callout.warn{background:#2a1a0a}.callout.warn .icon{color:var(--orange)}
+.stat-box{background:var(--panel);border-radius:20px;padding:14px 8px}
+.hero{border:0;box-shadow:none;border-radius:26px}
+.hero-footer{background:var(--panel)}
+.goal-badge{border-radius:20px}
+.workout-feature{padding:10px;border-radius:26px}
+.workout-feature>img{border-radius:16px}
+.play{background:var(--blue);color:#fff;width:44px;height:44px}
+/* phases: dark tiles, colour only in the number */
+.phase{background:var(--panel);color:var(--text);border:2px solid transparent;border-radius:20px;box-shadow:none}
+.phase span{color:#fff;background:var(--fill2)}
+.phase:nth-child(1) span{background:var(--blue)}.phase:nth-child(2) span{background:var(--green);color:#002b0c}.phase:nth-child(3) span{background:var(--orange);color:#3a1d00}.phase:nth-child(4) span{background:var(--purple)}
+.phase small{color:var(--muted)}
+.phase.active{border-color:var(--blue)}.phase.active:after{display:none}
+/* progress */
+.track{background:var(--fill);border-radius:999px}.track>i{background:var(--green);border-radius:999px}.track.blue>i{background:var(--blue)}.track.gold>i{background:var(--orange)}
+.icon-disc{border-radius:8px;background:var(--green);color:#fff}.icon-disc.blue{background:var(--blue)}
+.day-circle{border:0;background:var(--fill);border-radius:999px;color:var(--muted);height:40px}
+.day-circle.now{box-shadow:inset 0 0 0 2px var(--blue);color:#fff}
+.day-circle.hit{background:var(--green);color:#002b0c}
+/* chips & segmented */
+.pill{background:var(--fill);border:0;border-radius:999px;font-size:13px;padding:7px 12px;color:rgba(235,235,245,.85)}
+.segmented{background:var(--fill);border:0;border-radius:20px;padding:3px;gap:2px}
+.segmented button{font-size:13px;font-weight:600;border-radius:17px;color:#fff;min-height:36px}
+.segmented button.selected{background:#636366;color:#fff;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+/* buttons: capsules, one tint */
+.btn{border-radius:999px;min-height:50px;font-size:17px;font-weight:600}
+.btn.primary{background:var(--blue);box-shadow:none}
+.btn.secondary{background:var(--fill);color:var(--blue);border:0}
+.btn.green{background:var(--green);color:#002b0c}
+/* exercise list = inset grouped list */
+.exercise-list{background:var(--panel);border-radius:26px;gap:0;overflow:hidden}
+.exercise-row{background:transparent;border:0;border-radius:0;min-height:72px;padding:10px 16px;gap:12px;position:relative}
+.exercise-row+.exercise-row:before{content:'';position:absolute;top:0;right:0;left:88px;height:.5px;background:var(--line)}
+.exercise-row img{border-radius:10px}
+.exercise-row b{font-size:17px;font-weight:400}
+.exercise-row .number{background:var(--fill);color:var(--muted)}
+.exercise-row.finished .number{background:var(--green);color:#002b0c}
+.chevron{color:var(--faint)}
+.menu-row{border-bottom:.5px solid var(--line)}
+/* sheets: glass-edged, larger radius */
+dialog{background:var(--panel);border:0;border-radius:36px 36px 0 0}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.field,.set-row input,.date-control input{background:var(--fill);border:0;border-radius:12px;color:#fff}
+/* springs: every tap answers */
+button,.btn,.card,.exercise-row,.phase{transition:transform 380ms var(--snappy),background-color 200ms ease,opacity 200ms ease}
+button:active,.exercise-row:active,.phase:active{transform:scale(.96)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}button:active,.exercise-row:active,.phase:active{transform:none}}
+/* floating glass tab bar (phone) */
+@media (max-width:899px){
+.bottom-nav{left:20px;right:20px;bottom:calc(8px + var(--safe));height:64px;padding:6px;border-radius:32px;border:.5px solid rgba(255,255,255,.12);background:rgba(28,28,30,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);box-shadow:0 8px 30px rgba(0,0,0,.45)}
+.nav-item{min-height:52px;border-radius:26px;font-size:10px;font-weight:600;color:rgba(235,235,245,.6);gap:3px}
+.nav-item.active{color:var(--blue);background:var(--fill)}
+.nav-item.active:after{display:none}
+.app{padding-bottom:calc(104px + var(--safe))}
+.rest-bar{bottom:calc(80px + var(--safe))}
+}
+@media (min-width:900px){.nav-item.active{background:var(--fill);color:var(--blue)}.sidebar{background:#0d0d0f}}
+.phases .phase:nth-child(n){background:var(--panel);color:var(--text)}
+.phases .phase.active{border-color:var(--blue)}
