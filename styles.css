@@ -434,3 +434,32 @@ button:active,.exercise-row:active,.phase:active{transform:scale(.96)}
 .goal-art{width:118px;object-fit:cover;object-position:68% 20%;flex:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
 @media (max-width:899px){.bottom-nav{grid-template-columns:repeat(4,1fr)}}
 @media (prefers-reduced-motion:reduce){.ring-fill{transition:none}}
+
+/* ===== Astra 4.7 · own identity (no rings: training-first) ===== */
+.today{background:var(--panel)!important;min-height:0;padding:18px 18px 18px;gap:2px}
+.today:before{display:none}
+.today-kicker{font-size:13px;font-weight:700;opacity:1}
+.today.upper .today-kicker{color:#4DB2FF}.today.lower .today-kicker{color:#FFA95C}.today.light .today-kicker{color:#3DE2CF}.today.rest .today-kicker{color:var(--muted)}.today.is-done .today-kicker{color:#30D158}
+.today-word{font-size:clamp(44px,13vw,60px);letter-spacing:-1.5px;margin:2px 0 4px}
+.today-reason{color:var(--muted)}
+.today-cta{background:var(--blue)!important;color:#fff!important}
+.today.rest .today-cta{background:var(--fill2)!important}
+.today-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:-2px 0 14px}
+.today-strip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:#2C2C2E}
+.today.rest{padding-top:150px}
+.today-art{position:absolute;inset:0 0 auto 0;width:100%;height:220px;object-fit:cover;object-position:60% 15%;z-index:-1;-webkit-mask-image:linear-gradient(#000 30%,transparent);mask-image:linear-gradient(#000 30%,transparent);opacity:.85}
+/* weight trend: Astra's signature */
+.trend-card{width:100%;display:block;text-align:left;background:var(--panel);border-radius:26px;padding:16px 16px 10px;margin-top:14px}
+.trend-head{display:flex;gap:18px;align-items:flex-end}
+.trend-head>div:first-child{flex:1}
+.trend-head small{display:block;font-size:13px}
+.trend-head b{font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-size:34px;line-height:40px;font-weight:700}
+.trend-side b{font-size:22px;line-height:28px}
+.trend-head b span{font-size:15px;color:var(--muted);font-weight:600}
+.trend{width:100%;height:auto;display:block;margin-top:8px}
+.trend-line{fill:none;stroke:#0091FF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.trend-fill{fill:url(#none);fill:rgba(0,145,255,.14)}
+.trend-dot{fill:#fff;stroke:#0091FF;stroke-width:3}
+.goal-line{stroke:#30D158;stroke-width:1.5;stroke-dasharray:4 5}
+.goal-label{fill:#30D158;font-size:12px;font-weight:700;font-family:-apple-system,system-ui,sans-serif}
+.trend-empty{margin:10px 0 6px;font-size:15px;color:var(--muted)}

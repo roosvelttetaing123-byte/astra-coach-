@@ -1,7 +1,7 @@
 /* Astra Coach: versioned offline shell. Logs live in localStorage, not these caches. */
 'use strict';
-const CACHE='astra-coach-shell-4.6.0', PHOTOS='astra-coach-photos-v4';
-const SHELL=['./','./index.html','./styles.css?v=4.6.0','./app.js?v=4.6.0','./data.js?v=4.6.0','./coach-overrides.js?v=4.6.0','./manifest.webmanifest','./assets/icon.svg','./assets/icon-192.png','./assets/hero.svg','./assets/bird-dog.svg'];
+const CACHE='astra-coach-shell-4.7.0', PHOTOS='astra-coach-photos-v4';
+const SHELL=['./','./index.html','./styles.css?v=4.7.0','./app.js?v=4.7.0','./data.js?v=4.7.0','./coach-overrides.js?v=4.7.0','./manifest.webmanifest','./assets/icon.svg','./assets/icon-192.png','./assets/hero.svg','./assets/bird-dog.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('astra-coach-shell-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim();})());});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url),scope=new URL(self.registration.scope);if(event.request.mode==='navigate'&&url.origin===scope.origin&&url.pathname.startsWith(scope.pathname)){event.respondWith((async()=>{const cache=await caches.open(CACHE);try{const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),4500);let response;try{response=await fetch(event.request,{signal:controller.signal,cache:'no-store'});}finally{clearTimeout(timeout);}if(response.ok)await cache.put(new URL('./index.html',scope).href,response.clone());return response;}catch{return (await cache.match(new URL('./index.html',scope).href))||new Response('Reconnect once to prepare Astra for offline use.',{status:503,headers:{'Content-Type':'text/plain'}});}})());return;}

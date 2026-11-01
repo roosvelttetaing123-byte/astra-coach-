@@ -1,6 +1,6 @@
 # Astra Coach — on-device edition
 
-A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 4.6.0.
+A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 4.7.0.
 
 ## Use
 
@@ -10,7 +10,7 @@ No package install or build is required. To preview locally: `python3 -m http.se
 
 ## Working features
 
-- Five fully wired tabs and responsive desktop navigation.
+- Four tabs plus Account behind the avatar, and responsive desktop navigation.
 - Real exercise photographs with two-position guides, written cues and modifications. Bird dog uses a clearly labelled illustration from the approved concept, not a photograph.
 - A four-day upper/lower split (Upper A Tue, Lower A Wed, Upper B Fri, Lower B Sat) plus a Sunday light day for easy cardio, mobility and core, with single-side work for left/right balance. The original three full-body sessions stay in the code so older journal entries and backups still load. A reviewed rather than automatic four-phase progression and separate endurance logging remain.
 - Explicit per-set weight, repetitions/time and effort logging. Viewing an exercise does not mark it done. Partial sessions are distinguished from completed sessions.
