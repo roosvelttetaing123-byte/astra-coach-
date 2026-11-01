@@ -372,3 +372,65 @@ button:active,.exercise-row:active,.phase:active{transform:scale(.96)}
 @media (min-width:900px){.nav-item.active{background:var(--fill);color:var(--blue)}.sidebar{background:#0d0d0f}}
 .phases .phase:nth-child(n){background:var(--panel);color:var(--text)}
 .phases .phase.active{border-color:var(--blue)}
+
+/* ===== Astra 4.6 · Today, rebuilt (Weather hero + Fitness rings + Settings lists) ===== */
+.app{position:relative}
+.topbar{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));right:16px;margin:0;gap:10px;z-index:5}
+.topbar .brand>span:not(.avatar){display:none}
+.topbar .avatar,.topbar .icon-btn{width:36px;height:36px;min-height:36px;border-radius:50%;background:var(--fill);border:0;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;box-shadow:none}
+.topbar .icon-btn .icon{width:19px;height:19px;color:#FF375F}
+.page-title{margin:6px 0 14px;padding-right:96px}
+.page-title .eyebrow{display:none}
+.large-title{margin:6px 0 16px;padding-right:96px}
+.date-line{font-size:13px;line-height:18px;font-weight:600;color:var(--muted);margin:0 0 2px}
+/* hero: one giant word, one reason, one action */
+.today{border-radius:30px;padding:22px 22px 20px;color:#fff;display:flex;flex-direction:column;gap:4px;min-height:280px;justify-content:flex-end;position:relative;overflow:hidden;isolation:isolate}
+.today:before{content:'';position:absolute;inset:-40% -20% auto auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.28),transparent 65%);z-index:-1}
+.today.upper{background:linear-gradient(160deg,#0091FF 0%,#4A5BEF 100%)}
+.today.lower{background:linear-gradient(160deg,#FF9230 0%,#FF375F 100%)}
+.today.light{background:linear-gradient(160deg,#00DAC3 0%,#0097A7 100%)}
+.today.rest{background:linear-gradient(160deg,#3A3A3C 0%,#1C1C1E 100%)}
+.today.is-done{background:linear-gradient(160deg,#30D158 0%,#0A9D57 100%)}
+.today-kicker{font-size:15px;font-weight:600;opacity:.85;margin:0}
+.today-word{font-size:clamp(52px,17vw,76px);line-height:.95;font-weight:800;letter-spacing:-2px;margin:2px 0 6px}
+.today-reason{font-size:17px;line-height:22px;margin:0;max-width:30ch}
+.today-meta{font-size:15px;opacity:.8;margin:2px 0 0}
+.today-cta{margin-top:16px;background:#fff;color:#000;flex:none;align-self:stretch}
+.today.rest .today-cta{background:var(--fill2);color:#fff}
+/* rings */
+.summary{display:flex;align-items:center;gap:18px;margin-top:14px;padding:18px}
+.rings{width:132px;flex:none}.rings svg{width:100%;display:block}
+.ring-track,.ring-fill{fill:none;stroke-width:12}.ring-fill{stroke-linecap:round;transition:stroke-dasharray 550ms cubic-bezier(.3,1.4,.6,1)}
+.ring-track{opacity:.22}
+.r1{stroke:#FF9230}.r2{stroke:#00DAC3}.r3{stroke:#6D7CFF}
+.ring-legend{display:grid;gap:10px}
+.ring-legend small{display:block;font-size:13px}
+.ring-legend b{font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-size:22px;line-height:26px;font-weight:700}
+.ring-legend b span{font-size:15px;font-weight:600;opacity:.9}
+.t1{color:#FF9230}.t2{color:#00DAC3}.t3{color:#8F9BFF}
+/* inset grouped lists, Settings-style icons */
+.section-head{margin:26px 0 10px;display:flex;align-items:baseline;justify-content:space-between}
+.group{background:var(--panel);border-radius:26px;overflow:hidden}
+.plan-row,.set-row-link{width:100%;display:flex;align-items:center;gap:12px;padding:11px 16px;min-height:60px;text-align:left;background:transparent;position:relative;border-radius:0}
+.plan-row+.plan-row:before,.set-row-link+.set-row-link:before{content:'';position:absolute;top:0;left:57px;right:0;height:.5px;background:var(--line)}
+.plan-row.is-today{background:rgba(0,145,255,.12)}
+.sq{width:30px;height:30px;border-radius:7px;display:grid;place-items:center;flex:none;color:#fff}
+.sq .icon{width:18px;height:18px}
+.sq.upper,.sq.blue{background:#0091FF}.sq.lower{background:#FF9230}.sq.light{background:#00C2AD}.sq.rest{background:#48484A}.sq.pink{background:#FF375F}.sq.green{background:#30D158}
+.plan-text{flex:1;min-width:0;display:flex;flex-direction:column}
+.plan-text b{font-size:17px;line-height:22px;font-weight:400}
+.plan-text small{font-size:13px;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.status{flex:none;font-size:13px}
+.status.done{width:24px;height:24px;border-radius:50%;background:#30D158;color:#002b0c;display:grid;place-items:center}.status.done .icon{width:15px;height:15px;stroke-width:2.6}
+.today-pill{background:#0091FF;color:#fff;border-radius:999px;padding:3px 10px;font-weight:600}
+.muted-s{color:var(--faint)}
+.chev{color:var(--faint);flex:none}.chev .icon{width:16px;height:16px}
+/* goal */
+.goal-card{width:100%;display:flex;align-items:stretch;background:var(--panel);border-radius:26px;overflow:hidden;text-align:left;padding:0;min-height:132px}
+.goal-copy{flex:1;padding:16px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.goal-copy b{font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-size:28px;line-height:34px;font-weight:700;font-variant-numeric:tabular-nums}
+.goal-copy b span{font-size:17px;color:var(--muted);font-weight:600}
+.goal-copy .track{margin-top:8px;height:8px}
+.goal-art{width:118px;object-fit:cover;object-position:68% 20%;flex:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
+@media (max-width:899px){.bottom-nav{grid-template-columns:repeat(4,1fr)}}
+@media (prefers-reduced-motion:reduce){.ring-fill{transition:none}}
