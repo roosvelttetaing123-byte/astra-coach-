@@ -470,3 +470,104 @@ button:active,.exercise-row:active,.phase:active{transform:scale(.96)}
 .set-row.pb{box-shadow:inset 0 0 0 2px #FFD600;border-radius:12px}
 .gain{flex:none;font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-size:15px;font-weight:700;color:var(--faint)}
 .gain.up{color:#30D158}
+
+/* ===== v5 · the coach actually coaches ===== */
+/* direction arrows: up = green, down = amber, same = muted */
+.arr{font-style:normal;font-weight:800;margin-left:2px}
+.arr.up{color:#30D158}.arr.down{color:var(--orange)}.arr.same{color:var(--faint)}
+/* Today: coach line + coach cards (catch-up, review, backup, calories) */
+.today-coach{align-self:flex-start;margin:10px 0 0;padding:7px 12px;border-radius:12px;background:var(--fill);font-size:14px;line-height:19px;font-weight:600}
+.coach-card{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;width:100%;margin-top:12px;padding:14px 16px;background:var(--panel);border-radius:22px;text-align:left}
+.coach-card .cc-text{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.coach-card .cc-text b{font-size:15px;line-height:20px;font-weight:600}
+.coach-card .cc-text small{font-size:13px;line-height:18px}
+.cc-actions{display:flex;gap:8px;flex:0 0 auto}
+.coach-card.as-btn{flex-wrap:nowrap}
+.coach-card.as-btn .cc-text{flex:1 1 auto}
+.btn.sm{min-height:40px;padding:8px 14px;font-size:15px}
+.btn.done{background:var(--fill);color:var(--muted)}
+.plan-text small.wrap{white-space:normal}
+/* Train: targets, dropped rows, short-on-time switch */
+.exercise-row small.target{font-size:13px;line-height:18px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.exercise-row.dropped{opacity:.5}
+.exercise-row.dropped img{filter:grayscale(1)}
+.switch-row{display:flex;align-items:center;gap:14px;margin-top:12px;padding:12px 16px;background:var(--panel);border-radius:22px;cursor:pointer}
+.switch-row input[type=checkbox]{-webkit-appearance:none;appearance:none;position:relative;flex:none;width:51px;height:31px;margin:0;border-radius:999px;background:var(--fill2);transition:background-color .2s}
+.switch-row input[type=checkbox]::after{content:'';position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .2s}
+.switch-row input[type=checkbox]:checked{background:#30D158}
+.switch-row input[type=checkbox]:checked::after{transform:translateX(20px)}
+.switch-row input[type=checkbox]:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.switch-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.switch-text b{font-size:15px;line-height:20px;font-weight:600}
+.switch-text small{font-size:13px;line-height:18px}
+/* exercise sheet: prescription callout, L/R sets, plates, hurt chips */
+.rx{--rx:var(--blue);margin:6px 0 14px;padding:14px 16px;background:var(--panel2);border-radius:22px;box-shadow:inset 4px 0 0 var(--rx)}
+.rx.increase,.rx.add-reps,.rx.start{--rx:#30D158}
+.rx.pain-hold,.rx.reduce,.rx.easy{--rx:var(--orange)}
+.rx.hold,.rx.fixed{--rx:var(--faint)}
+.rx-label{display:block;font-size:12px;font-weight:600;letter-spacing:.2px}
+.rx-big{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-variant-numeric:tabular-nums;font-size:30px;line-height:36px;font-weight:700;letter-spacing:-.5px}
+.rx p{font-size:15px;line-height:20px;color:var(--muted);margin-top:2px}
+.rx small:not(.rx-label){display:block;margin-top:6px}
+.rx .btn{margin-top:10px}
+.set-head.uni,.set-row.uni{grid-template-columns:30px repeat(4,minmax(0,1fr)) 38px;gap:5px}
+.set-row.uni input{padding-left:1px;padding-right:1px}
+.set-row input::placeholder{color:var(--faint)}
+.plate-line{margin:8px 0 0;font-size:13px;line-height:18px;color:var(--muted);font-variant-numeric:tabular-nums}
+.plate-line:empty{display:none}
+.asym{margin:10px 0 0;padding:8px 12px;border-radius:12px;background:rgba(255,146,48,.14);color:#FFB067;font-size:13px;line-height:18px}
+.hurt-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.hurt-row small{margin-right:2px}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 14px;border-radius:999px;background:var(--fill);color:#fff;font-size:14px;font-weight:600}
+.chip.on{background:var(--orange);color:#1b0d00}
+.chip.good{background:#30D158;color:#002b0c}
+.chip.dim{color:var(--muted)}
+.swap-opt{display:flex;align-items:center;gap:12px;width:100%;margin-top:8px;padding:10px 12px;text-align:left;background:var(--panel2);border-radius:16px}
+.swap-opt img{width:64px;height:48px;flex:none;object-fit:contain;border-radius:8px;background:#eef0f3}
+.swap-opt>span:not(.pill){flex:1;min-width:0}
+.swap-opt b{display:block;font-size:15px;line-height:20px;font-weight:600}
+.swap-opt small{font-size:12px;line-height:16px}
+.pref-swap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:.5px solid var(--line)}
+.pref-swap>span{min-width:0}
+.pref-swap b,.pref-swap small{display:block}
+/* rest bar: next-set target */
+.rest-bar span em,.inline-rest span em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:1px}
+/* toast with Undo */
+.toast{visibility:hidden;transition:opacity .18s,transform .18s,visibility 0s linear .18s}
+.toast.show{visibility:visible;transition-delay:0s}
+.toast.has-undo{pointer-events:auto}
+.toast button{margin-left:10px;padding:6px 8px;min-height:32px;background:none;color:#0a63c9;font-size:12px;font-weight:800;text-decoration:underline}
+/* Nutrition: day-logged chip, recent strip, close the gap */
+.day-logged{display:flex;justify-content:center;margin:-8px 0 16px}
+.recent-strip{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.recent-chip{flex:none;scroll-snap-align:start;width:136px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px;text-align:left;background:var(--panel);border-radius:18px}
+.recent-chip .food-icon{font-size:22px;line-height:1.2}
+.recent-chip b{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:18px;font-weight:600}
+.recent-chip small{font-size:12px;line-height:16px;white-space:nowrap}
+.gap-card .sub{margin-bottom:6px}
+.gap-card .btn{margin-top:12px}
+/* Progress: chart legend, weekly volume bars */
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:6px 0 0;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:50%;background:#70e9c1}
+.legend i.ln{width:16px;height:3px;border-radius:2px;background:#0091FF;vertical-align:2px}
+.vol-row{display:grid;grid-template-columns:84px minmax(0,1fr) 76px;gap:10px;align-items:center;padding:7px 0}
+.vol-name{font-size:14px;line-height:18px}
+.vol-track{position:relative;height:10px;overflow:hidden;border-radius:999px;background:var(--fill)}
+.vol-band{position:absolute;top:0;bottom:0;background:rgba(48,209,88,.28)}
+.vol-fill{position:absolute;left:0;top:2px;bottom:2px;border-radius:999px;background:#8e8e93}
+.vol-row.ok .vol-fill{background:#30D158}
+.vol-row.low .vol-fill{background:var(--orange)}
+.vol-row.high .vol-fill{background:var(--indigo)}
+.vol-val{font-size:12px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vol-val b{color:var(--text)}
+.gain.warn{color:var(--orange)}
+/* review sheet */
+.rv-action{display:flex;align-items:flex-start;gap:12px;margin-top:10px;padding:12px 14px;background:var(--panel2);border-radius:18px}
+.rv-action>div{flex:1;min-width:0}
+.rv-action b{font-size:15px;line-height:20px}
+.rv-action p{margin-top:2px;font-size:13px;line-height:18px;color:var(--muted)}
+.rv-action .btn{flex:none}
+#copy-fallback textarea{margin-top:8px;font-size:13px}
+@media(max-width:374px){.vol-row{grid-template-columns:70px minmax(0,1fr) 68px;gap:8px}.recent-chip{width:124px}.rx-big{font-size:26px;line-height:32px}}
+.ex-actions>.btn{flex:0 0 auto;min-height:48px;padding:10px 14px;font-size:15px}
+.ex-actions>.btn.primary{flex:1 1 auto}
