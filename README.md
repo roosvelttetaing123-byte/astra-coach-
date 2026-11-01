@@ -1,6 +1,6 @@
 # Astra Coach — on-device edition
 
-A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 4.7.0.
+A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 4.8.0.
 
 ## Use
 

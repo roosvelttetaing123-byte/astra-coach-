@@ -29,5 +29,6 @@ LB:{blurb:'Single-leg work, side hip, core',name:'Lower B · Single-leg + carrie
 SUN:{blurb:'Easy cardio, mobility, core',name:'Light day · Mobility + core',short:'Light day',tag:'Mobility and core',focus:'20–30 min easy cardio first (log it under Endurance), then mobility and core.',effort:'Easy: finish feeling better than you started',minutes:'45–60',image:'Kneeling_Hip_Flexor/0.jpg',ids:['flexhip','hipswitch','flextspine','flexham','dead','bird','sideplank'],dose:{flexhip:{sets:2,min:30,max:45,rest:15},hipswitch:{sets:2,min:6,max:8,rest:20},flextspine:{sets:2,min:6,max:8,rest:15},flexham:{sets:2,min:30,max:45,rest:15},dead:{sets:2,min:6,max:8,rest:40},bird:{sets:2,min:6,max:8,rest:40},sideplank:{sets:2,min:20,max:30,rest:45}}}
 });
 D.split={week:{0:'SUN',1:null,2:'UA',3:'LA',4:null,5:'UB',6:'LB'},order:['UA','LA','UB','LB','SUN'],lift:['UA','LA','UB','LB'],next:{UA:'LA',LA:'UB',UB:'LB',LB:'UA',A:'UA',B:'UA',C:'UA'}};
+D.exercises.rdl.image='Stiff-Legged_Dumbbell_Deadlift';
 D.phases[1].desc=D.phases[1].desc.replace('Three gym sessions weekly.','Four upper/lower gym sessions weekly.');
 })();

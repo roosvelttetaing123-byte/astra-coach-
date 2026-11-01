@@ -463,3 +463,10 @@ button:active,.exercise-row:active,.phase:active{transform:scale(.96)}
 .goal-line{stroke:#30D158;stroke-width:1.5;stroke-dasharray:4 5}
 .goal-label{fill:#30D158;font-size:12px;font-weight:700;font-family:-apple-system,system-ui,sans-serif}
 .trend-empty{margin:10px 0 6px;font-size:15px;color:var(--muted)}
+
+/* ===== Astra 4.8 · logging like the best trackers ===== */
+.set-n{display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.set-n .prev{font-size:10px;color:var(--faint);font-weight:600;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.set-row.pb{box-shadow:inset 0 0 0 2px #FFD600;border-radius:12px}
+.gain{flex:none;font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-size:15px;font-weight:700;color:var(--faint)}
+.gain.up{color:#30D158}
