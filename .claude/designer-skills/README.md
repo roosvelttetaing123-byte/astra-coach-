@@ -1,17 +1,19 @@
-# Designer Skills Pack (vendored)
+# Designer Skills (selected)
 
-Source: https://github.com/Owl-Listener/designer-skills — commit `9a6930cf84a822eb458624bd11c61aac5bbdf224`. MIT licence, © 2026 MC Dean (see `LICENSE`).
+From https://github.com/Owl-Listener/designer-skills, commit `9a6930cf84a822eb458624bd11c61aac5bbdf224`. MIT licence, © 2026 MC Dean (see `LICENSE`). Files are unchanged copies.
 
-The nine design-practice plugins (design-research, design-systems, ux-strategy, ui-design, interaction-design, prototyping-testing, design-ops, designer-toolkit, visual-critique) are copied in as plain project skills and commands so they load in every Claude Code session on this repo, including cloud sessions, which don't install marketplace plugins or load untrusted skills-directory plugins:
+Only the skills that serve Astra — a one-person iPhone PWA for training and nutrition — are kept, so they don't crowd the context:
 
-- `.claude/skills/<skill>/SKILL.md` — 111 skills, unchanged.
-- `.claude/commands/<command>.md` — 34 commands. Plugin prefixes are dropped (`/visual-critique:critique-screen` → `/critique-screen`).
+| Need | Skills |
+|---|---|
+| Find problems | `heuristic-evaluation`, `accessibility-audit`, `critique-affordance`, `critique-information-density`, `critique-visual-hierarchy` |
+| Feel native on iPhone | `platform-conventions`, `responsive-design`, `fitts-law` |
+| Smooth and responsive | `feedback-patterns`, `micro-interaction-spec`, `animation-principles`, `loading-states` |
+| No dead ends | `error-handling-ux`, `form-design` |
+| Enjoyable, keeps you coming back | `interfaces-that-feel`, `peak-end-rule`, `zeigarnik-effect` |
+| Not clunky: type and spacing | `critique-typography`, `typography-scale`, `spacing-system` |
+| Words | `ux-writing` |
 
-Local changes from upstream:
+Commands: `/critique-ux` (affordance, density, hierarchy → prioritised fix list) and `/platform-audit` (iOS conventions, responsive).
 
-- `design-research`'s `test-plan` is renamed `/research-test-plan`; `prototyping-testing`'s keeps `/test-plan`.
-- Namespaced command references in `start-here.md` and `INDEX.md` are rewritten to the unprefixed names.
-
-`INDEX.md` maps situations to skills. Not sure where to begin? Run `/start-here`.
-
-To update: re-copy `*/skills/*` and `*/commands/*.md` from a newer upstream commit and re-apply the two changes above.
+To add another skill, copy `<plugin>/skills/<name>/` from upstream into `.claude/skills/`.

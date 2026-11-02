@@ -36,7 +36,7 @@ No package install or build is required. To preview locally: `python3 -m http.se
 
 ## Design skills for Claude
 
-`.claude/` vendors the [Designer Skills Pack](https://github.com/Owl-Listener/designer-skills) (MIT, MC Dean): 111 design skills and 34 commands that load automatically in Claude Code sessions on this repo. Useful starting points for Astra: `/critique-screen`, `/critique-ux`, `/platform-audit`, `/responsive-audit`, `/evaluate`, `/color-palette`, `/type-system`; `/start-here` routes you if unsure. See `.claude/designer-skills/README.md`. These files are developer tooling only — the app doesn't load them and the service worker doesn't cache them.
+`.claude/` holds 21 selected skills and 2 commands from the [Designer Skills Pack](https://github.com/Owl-Listener/designer-skills) (MIT, MC Dean) — heuristics, iOS conventions, typography and spacing, feedback and motion, error handling, forms, accessibility and UX writing. They load automatically in Claude Code sessions on this repo; try `/critique-ux` or `/platform-audit`. See `.claude/designer-skills/README.md`. Developer tooling only: the app doesn't load these files.
 
 ## Privacy and limitations
 
