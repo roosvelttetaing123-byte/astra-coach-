@@ -1,6 +1,6 @@
 # Astra Coach — on-device edition
 
-A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.1.0.
+A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.2.0.
 
 ## Use
 
@@ -19,6 +19,14 @@ No package install or build is required. To preview locally: `python3 -m http.se
 - Dated weight/waist history, trend chart, two-week averages, workout and cardio journals.
 - Conservative readiness checks, source credits, JSON backup export and validated restore.
 - Versioned service worker. App-shell offline access after a successful online load; photo-library download available from More.
+
+### New in v5.2: three looks, and Auto
+
+- **Pick your look.** More → Appearance offers **Daylight** (bright and clean), **Energy** (warm and sporty) and **Night Glow** (deep indigo with colour light). A choice applies the moment you tap it, is remembered on this device, and travels with your backups. Backups from earlier versions restore as Auto.
+- **Auto is the default.** It follows the time of day: Daylight 5 am–noon, Energy noon–7 pm, Night Glow 7 pm–5 am. An open app switches at those times with a short crossfade, and Auto re-checks whenever you come back to the app.
+- **No flash on launch.** The theme is chosen before the first paint, so an evening launch never flashes white (and a morning one never flashes dark).
+- **Status bar.** The iPhone status bar now uses the default style, so its text stays readable on the light themes.
+- **iOS focus-ring fix.** Tapping a heading that the app focuses on its own, or the sheet itself, no longer draws Safari's blue focus ring; keyboard focus rings on buttons and fields are unchanged.
 
 ### New in v5.1: smoother, calmer, fewer taps
 
