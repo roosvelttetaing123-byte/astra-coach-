@@ -1,6 +1,6 @@
 # Astra Coach — on-device edition
 
-A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.0.0.
+A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.1.0.
 
 ## Use
 
@@ -19,6 +19,19 @@ No package install or build is required. To preview locally: `python3 -m http.se
 - Dated weight/waist history, trend chart, two-week averages, workout and cardio journals.
 - Conservative readiness checks, source credits, JSON backup export and validated restore.
 - Versioned service worker. App-shell offline access after a successful online load; photo-library download available from More.
+
+### New in v5.1: smoother, calmer, fewer taps
+
+- **Sets carry forward.** After you save a set, the next sets fill in with the same weight, reps and effort, so one tap saves each following set. Fixes v5.0, where set 2 of a new exercise refused to save until you retyped the weight.
+- **Log without scrolling.** During a workout, the exercise sheet puts your sets right under the target; the photo and step-by-step guide follow below.
+- **One-tap check-in.** Warning symptoms is now two large buttons instead of a dropdown, and sleep starts from your last check-in.
+- **A finish worth finishing.** Saving a workout shows what you did: time, sets, volume, personal bests and what goes up next time, with a short haptic. After-session back discomfort starts at your pre-session score.
+- **Resume where you left off.** Today shows an unfinished workout with its progress and a Resume button.
+- **Clearer weight chart.** Scaled to your actual weigh-ins, so the trend is visible; the goal shows as text when it's off the chart.
+- **Shorter Progress.** The latest 5 sessions, 7 weigh-ins and 5 endurance entries, each with Show all.
+- **Friendlier details.** Nutrition shows "Today" or "Yesterday" instead of a raw date; warm-up and safety notes on Train fold into one section (wording unchanged); a rest timer no longer covers the last row of a page.
+- **Calmer type and spacing.** One iPhone-style type scale (9 sizes in use instead of 19, weights 400–700 instead of up to 850, nothing under 11 px), spacing on a 4 px grid, a single-row workout picker, press feedback and 44 px minimum tap targets.
+- **Readable buttons.** Button labels and blue text now meet WCAG AA contrast (white on blue was 3.2:1, now 4.9:1), which helps in a bright gym.
 
 ### New in v5: the coach actually coaches
 
