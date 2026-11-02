@@ -34,6 +34,10 @@ No package install or build is required. To preview locally: `python3 -m http.se
 - **Rest alert.** When a rest timer ends while the app is open, it beeps and vibrates where the browser allows it, and the rest bar shows the next set's target.
 - **Backup nudge.** A reminder appears on Today when you have 10+ records and haven't exported in 14 days.
 
+## Design skills for Claude
+
+`.claude/` vendors the [Designer Skills Pack](https://github.com/Owl-Listener/designer-skills) (MIT, MC Dean): 111 design skills and 34 commands that load automatically in Claude Code sessions on this repo. Useful starting points for Astra: `/critique-screen`, `/critique-ux`, `/platform-audit`, `/responsive-audit`, `/evaluate`, `/color-palette`, `/type-system`; `/start-here` routes you if unsure. See `.claude/designer-skills/README.md`. These files are developer tooling only — the app doesn't load them and the service worker doesn't cache them.
+
 ## Privacy and limitations
 
 There is no backend, subscription, telemetry, Apple Health/Garmin connection or automatic activity recording. Journal data stays in this browser's localStorage (the app asks the browser to keep it persistent, which browsers may ignore). Website-data removal, storage eviction, changing devices or using another browser can lose access; export backups regularly. GitHub receives requests for the site and public exercise images, but no journal entries are uploaded. Public code includes editable example profile/target defaults only, never a user's saved journal.
