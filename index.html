@@ -7,7 +7,7 @@
 <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="./assets/icon-192.png">
 <script>
 /* v5.2 · theme before first paint (no flash). Keep in step with app.js: the hour thresholds here MUST match themeFor() (05:00-11:59 daylight, 12:00-18:59 energy, 19:00-04:59 glow) and the colours MUST match THEMES. app.js re-applies the theme once it loads. */
-try{var C={daylight:'#F2F2F7',energy:'#FBF7F2',glow:'#0B0F24'},t=localStorage.getItem('astra.theme');if(!C.hasOwnProperty(t)){var h=new Date().getHours();t=h>=5&&h<12?'daylight':h>=12&&h<19?'energy':'glow'}document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',C[t])}catch(e){document.documentElement.setAttribute('data-theme','daylight')}
+(function(){try{var C={daylight:'#F2F2F7',energy:'#FBF7F2',glow:'#0B0F24'},t=localStorage.getItem('astra.theme');if(!C.hasOwnProperty(t)){var h=new Date().getHours();t=h>=5&&h<12?'daylight':h>=12&&h<19?'energy':'glow'}document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',C[t])}catch(e){document.documentElement.setAttribute('data-theme','daylight')}})();
 </script>
 <link rel="stylesheet" href="./styles.css?v=5.2.0"><title>Astra Coach · Build, move, grow</title>
 </head><body>
