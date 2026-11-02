@@ -116,7 +116,7 @@
 @property --glow1{syntax:'<color>';inherits:true;initial-value:rgba(0,0,0,0)}
 @property --glow2{syntax:'<color>';inherits:true;initial-value:rgba(0,0,0,0)}
 @property --art-opacity{syntax:'<number>';inherits:true;initial-value:.5}
-:root,:root[data-theme="daylight"],[data-swatch="daylight"],[data-swatch="auto"]{color-scheme:light
+:root,:root[data-theme="daylight"],[data-swatch="daylight"],[data-swatch="auto"]{color-scheme:light;
 /* Surfaces and text */
 --bg:#F2F2F7;--panel:#FFFFFF;--panel-solid:#FFFFFF;--panel2:#F2F2F7;--panel2-solid:#F2F2F7;--sheet:#FFFFFF;--line:rgba(60,60,67,.14);--text:#0B0B0F;--muted:#5E5E66;--faint:rgba(60,60,67,.30);--fill:rgba(118,118,128,.10);--fill2:rgba(118,118,128,.18);--scrim:rgba(18,18,28,.38);--float:#FFFFFF;--sidebar:#FFFFFF;--media:#F2F3F4;--on-media:#2B3340;--thumb:#FFFFFF;--sh-thumb:rgba(0,0,0,.28);
 /* Shadows and outlines */
@@ -138,7 +138,7 @@
 /* Night Glow page light (a fixed layer behind the app; transparent in the light themes) and the hero art */
 --glow1:rgba(0,0,0,0);--glow2:rgba(0,0,0,0);--art-opacity:.5;
 }
-:root[data-theme="energy"],[data-swatch="energy"],[data-swatch="auto"]::before{color-scheme:light
+:root[data-theme="energy"],[data-swatch="energy"],[data-swatch="auto"]::before{color-scheme:light;
 /* Surfaces and text */
 --bg:#FBF7F2;--panel:#FFFFFF;--panel-solid:#FFFFFF;--panel2:#F6F0E9;--panel2-solid:#F6F0E9;--sheet:#FFFFFF;--line:rgba(40,24,10,.10);--text:#1A120B;--muted:#6E6258;--faint:rgba(40,24,10,.30);--fill:rgba(40,24,10,.06);--fill2:rgba(40,24,10,.10);--scrim:rgba(34,20,8,.38);--float:#FFFFFF;--sidebar:#FFFFFF;--media:#F2F3F4;--on-media:#2B3340;--thumb:#FFFFFF;--sh-thumb:rgba(0,0,0,.28);
 /* Shadows and outlines */
@@ -160,7 +160,7 @@
 /* Night Glow page light (a fixed layer behind the app; transparent in the light themes) and the hero art */
 --glow1:rgba(0,0,0,0);--glow2:rgba(0,0,0,0);--art-opacity:.5;
 }
-:root[data-theme="glow"],[data-swatch="glow"],[data-swatch="auto"]::after{color-scheme:dark
+:root[data-theme="glow"],[data-swatch="glow"],[data-swatch="auto"]::after{color-scheme:dark;
 /* Surfaces and text */
 --bg:#0B0F24;--panel:rgba(255,255,255,.06);--panel-solid:#1A1D33;--panel2:rgba(255,255,255,.09);--panel2-solid:#292D4A;--sheet:#141838;--line:rgba(255,255,255,.10);--text:#F4F5FF;--muted:#A9B0D6;--faint:rgba(169,176,214,.40);--fill:rgba(255,255,255,.08);--fill2:rgba(255,255,255,.14);--scrim:rgba(3,5,18,.60);--float:rgba(255,255,255,.08);--sidebar:rgba(255,255,255,.04);--media:#F2F3F4;--on-media:#2B3340;--thumb:#FFFFFF;--sh-thumb:rgba(0,0,0,.40);
 /* Shadows and outlines */
@@ -747,8 +747,8 @@ body.resting main{padding-bottom:72px}
 .swatch{position:relative;display:block;width:56px;height:56px;overflow:hidden;border-radius:14px;background:radial-gradient(circle at 90% 0%,var(--glow1),transparent 62%),radial-gradient(circle at 0% 40%,var(--glow2),transparent 62%),var(--bg);box-shadow:0 0 0 1px var(--line)}
 .swatch::before{content:'';position:absolute;left:7px;right:7px;top:7px;height:24px;border-radius:8px;background:radial-gradient(100% 100% at 100% 0%,var(--hero-glow),transparent 70%),linear-gradient(200deg,var(--hu1),var(--hu2) 50%,var(--hu3))}/* a mini Today hero */
 .swatch::after{content:'';position:absolute;left:7px;right:7px;bottom:7px;height:14px;border-radius:6px;background:var(--panel-solid);box-shadow:0 0 0 1px var(--ring),0 1px 3px var(--sh2)}/* a mini card */
-/* Auto: the same swatch as three bands, Daylight | Energy | Night Glow (each band's tokens are scoped by the theme blocks above) */
+/* Auto: the same swatch cut into three diagonal slices, Daylight | Energy | Night Glow. Each slice is painted with its own theme's tokens (scoped by the theme blocks above), so nothing here is a literal colour. */
 .swatch[data-swatch="auto"]{background:linear-gradient(var(--panel-solid),var(--panel-solid)) 7px 35px/42px 14px no-repeat,linear-gradient(200deg,var(--hu1),var(--hu2) 50%,var(--hu3)) 7px 7px/42px 24px no-repeat,var(--bg)}
-.swatch[data-swatch="auto"]::before,.swatch[data-swatch="auto"]::after{top:0;bottom:0;right:auto;height:auto;width:calc(100%/3 + .5px);border-radius:0;box-shadow:none}
-.swatch[data-swatch="auto"]::before{left:calc(100%/3);background:linear-gradient(var(--panel-solid),var(--panel-solid)) -11.67px 35px/42px 14px no-repeat,linear-gradient(200deg,var(--hu1),var(--hu2) 50%,var(--hu3)) -11.67px 7px/42px 24px no-repeat,var(--bg)}
-.swatch[data-swatch="auto"]::after{left:calc(200%/3);background:linear-gradient(var(--panel-solid),var(--panel-solid)) -30.33px 35px/42px 14px no-repeat,linear-gradient(200deg,var(--hu1),var(--hu2) 50%,var(--hu3)) -30.33px 7px/42px 24px no-repeat,var(--bg)}
+.swatch[data-swatch="auto"]::before,.swatch[data-swatch="auto"]::after{inset:0;width:auto;height:auto;border-radius:0;box-shadow:none}
+.swatch[data-swatch="auto"]::before{background:linear-gradient(var(--panel-solid),var(--panel-solid)) 7px 35px/42px 14px no-repeat,linear-gradient(200deg,var(--hu1),var(--hu2) 50%,var(--hu3)) 7px 7px/42px 24px no-repeat,var(--bg);clip-path:polygon(47% 0,80% 0,52% 100%,19% 100%)}
+.swatch[data-swatch="auto"]::after{background:linear-gradient(var(--panel-solid),var(--panel-solid)) 7px 35px/42px 14px no-repeat,linear-gradient(200deg,var(--hu1),var(--hu2) 50%,var(--hu3)) 7px 7px/42px 24px no-repeat,var(--bg);clip-path:polygon(80% 0,100% 0,100% 100%,52% 100%)}
