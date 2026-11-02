@@ -150,7 +150,7 @@
 /* Status: ok = done, warn = caution, pb = personal best, heart */
 --ok:#15803D;--ok-text:#137A36;--on-ok:#FFFFFF;--ok-soft:rgba(52,199,89,.16);--ok-ring:rgba(52,199,89,.38);--ok-tint:rgba(52,199,89,.50);--warn:#B45309;--warn-text:#A24A07;--on-warn:#FFFFFF;--warn-bg:#FFF0E3;--warn-fg:#7A2E00;--warn-soft:rgba(240,106,31,.14);--warn-soft-text:#8A3A00;--pb:#C27A00;--pb-text:#8A5A00;--heart:#FF375F;
 /* Today hero: stops run bright (top right) to deep (bottom left) per workout kind; Energy uses one brand gradient for all. Text sits on the deep two stops. */
---hu1:#FF8248;--hu2:#CF381B;--hu3:#A8145E;--hl1:#FF8248;--hl2:#CF381B;--hl3:#A8145E;--hg1:#FF8248;--hg2:#CF381B;--hg3:#A8145E;--hr1:#FF8248;--hr2:#CF381B;--hr3:#A8145E;--hero-glow:rgba(255,255,255,.22);--hero-text:#FFFFFF;--hero-sub:#FFFFFF;--hero-chip:rgba(0,0,0,.22);--hero-track:rgba(255,255,255,.30);--hero-bar:#FFFFFF;--hero-cta:#1A120B;--hero-cta-text:#FFFFFF;--hero-cta-press:#000000;
+--hu1:#FF8248;--hu2:#C93319;--hu3:#A8145E;--hl1:#FF8248;--hl2:#C93319;--hl3:#A8145E;--hg1:#FF8248;--hg2:#C93319;--hg3:#A8145E;--hr1:#FF8248;--hr2:#C93319;--hr3:#A8145E;--hero-glow:rgba(255,255,255,.22);--hero-text:#FFFFFF;--hero-sub:#FFFFFF;--hero-chip:rgba(0,0,0,.22);--hero-track:rgba(255,255,255,.30);--hero-bar:#FFFFFF;--hero-cta:#1A120B;--hero-cta-text:#FFFFFF;--hero-cta-press:#000000;
 /* Tab bar, toast, rest bar */
 --tab-bg:rgba(255,252,248,.90);--tab-line:rgba(40,24,10,.08);--tab-active-bg:rgba(232,70,30,.12);--toast-bg:#1A120B;--toast-text:#FFFFFF;--toast-link:#FFB59A;--rest-bg:rgba(255,255,255,.97);
 /* Charts and the calorie ring */
