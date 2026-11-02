@@ -1,6 +1,6 @@
 # Astra Coach — on-device edition
 
-A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.0.0.
+A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.1.0.
 
 ## Use
 
@@ -20,6 +20,19 @@ No package install or build is required. To preview locally: `python3 -m http.se
 - Conservative readiness checks, source credits, JSON backup export and validated restore.
 - Versioned service worker. App-shell offline access after a successful online load; photo-library download available from More.
 
+### New in v5.1: smoother, calmer, fewer taps
+
+- **Sets carry forward.** After you save a set, the next sets fill in with the same weight, reps and effort, so one tap saves each following set. Fixes v5.0, where set 2 of a new exercise refused to save until you retyped the weight.
+- **Log without scrolling.** During a workout, the exercise sheet puts your sets right under the target; the photo and step-by-step guide follow below.
+- **One-tap check-in.** Warning symptoms is now two large buttons instead of a dropdown, and sleep starts from your last check-in.
+- **A finish worth finishing.** Saving a workout shows what you did: time, sets, volume, personal bests and what goes up next time, with a short haptic. After-session back discomfort starts at your pre-session score.
+- **Resume where you left off.** Today shows an unfinished workout with its progress and a Resume button.
+- **Clearer weight chart.** Scaled to your actual weigh-ins, so the trend is visible; the goal shows as text when it's off the chart.
+- **Shorter Progress.** The latest 5 sessions, 7 weigh-ins and 5 endurance entries, each with Show all.
+- **Friendlier details.** Nutrition shows "Today" or "Yesterday" instead of a raw date; warm-up and safety notes on Train fold into one section (wording unchanged); a rest timer no longer covers the last row of a page.
+- **Calmer type and spacing.** One iPhone-style type scale (9 sizes in use instead of 19, weights 400–700 instead of up to 850, nothing under 11 px), spacing on a 4 px grid, a single-row workout picker, press feedback and 44 px minimum tap targets.
+- **Readable buttons.** Button labels and blue text now meet WCAG AA contrast (white on blue was 3.2:1, now 4.9:1), which helps in a bright gym.
+
 ### New in v5: the coach actually coaches
 
 - **A target for every set.** Double progression with effort autoregulation: each exercise shows today's weight × reps (for example "22 kg × 10 ↑"), the arrow shows up, same or down, and a one-line reason says why. Pain flags, a stall, or a rough readiness check hold or reduce the load. First-time lifts say "Find your weight" rather than guess.
@@ -33,6 +46,10 @@ No package install or build is required. To preview locally: `python3 -m http.se
 - **Copy for Claude.** The review sheet copies a plain-text brief (profile, last 7 days, main lifts, your notes) to the clipboard. You paste it wherever you like.
 - **Rest alert.** When a rest timer ends while the app is open, it beeps and vibrates where the browser allows it, and the rest bar shows the next set's target.
 - **Backup nudge.** A reminder appears on Today when you have 10+ records and haven't exported in 14 days.
+
+## Design skills for Claude
+
+`.claude/` holds 21 selected skills and 2 commands from the [Designer Skills Pack](https://github.com/Owl-Listener/designer-skills) (MIT, MC Dean) — heuristics, iOS conventions, typography and spacing, feedback and motion, error handling, forms, accessibility and UX writing. They load automatically in Claude Code sessions on this repo; try `/critique-ux` or `/platform-audit`. See `.claude/designer-skills/README.md`. Developer tooling only: the app doesn't load these files.
 
 ## Privacy and limitations
 
