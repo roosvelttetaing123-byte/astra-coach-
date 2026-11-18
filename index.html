@@ -9,18 +9,18 @@
 /* v5.2 · theme before first paint (no flash). Keep in step with app.js: the hour thresholds here MUST match themeFor() (05:00-11:59 daylight, 12:00-18:59 energy, 19:00-04:59 glow) and the colours MUST match THEMES. app.js re-applies the theme once it loads. */
 (function(){try{var C={daylight:'#F2F2F7',energy:'#FBF7F2',glow:'#0B0F24'},t=localStorage.getItem('astra.theme');if(!C.hasOwnProperty(t)){var h=new Date().getHours();t=h>=5&&h<12?'daylight':h>=12&&h<19?'energy':'glow'}document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',C[t])}catch(e){document.documentElement.setAttribute('data-theme','daylight')}})();
 </script>
-<link rel="stylesheet" href="./styles.css?v=5.2.0"><title>Astra Coach · Build, move, grow</title>
+<link rel="stylesheet" href="./styles.css?v=5.3.0"><title>Astra Coach · Build, move, grow</title>
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="shell"><aside class="sidebar"><div class="wordmark"><img src="./assets/icon.svg" alt="" width="44" height="44"><div>ASTRA COACH<small>STRONGER EVERY DAY</small></div></div><div id="side-nav"></div><p class="sidebar-note">Build strength.<br>Find your rhythm.<br>Keep showing up.</p><small class="version">LOCAL-FIRST · V5.2.0</small></aside>
+<div class="shell"><aside class="sidebar"><div class="wordmark"><img src="./assets/icon.svg" alt="" width="44" height="44"><div>ASTRA COACH<small>STRONGER EVERY DAY</small></div></div><div id="side-nav"></div><p class="sidebar-note">Build strength.<br>Find your rhythm.<br>Keep showing up.</p><small class="version">LOCAL-FIRST · V5.3.0</small></aside>
 <div class="app"><header class="topbar"><a class="brand" href="#more" aria-label="Account and settings"><span class="avatar">RV</span><span><small id="greeting">Your personal coach</small><strong id="greeting-name">Let's build, RV.</strong></span></a><button class="icon-btn" data-action="checkin" aria-label="Daily readiness check-in" id="readiness-button"></button></header>
 <div id="storage-warning" class="alert" hidden role="status"></div>
 <main id="main" tabindex="-1"><p class="loading">Loading your coach…</p></main>
 <p class="footer-note">MOVE · STRENGTHEN · BUILD · FLEX · ENGINE</p></div></div>
 <nav id="bottom-nav" class="bottom-nav" aria-label="Main navigation"></nav>
 <dialog id="sheet" aria-labelledby="sheet-title"><div class="sheet-inner"><div class="sheet-top"><span class="drag-handle"></span><button class="icon-btn" data-action="close" aria-label="Close panel">✕</button></div><div id="sheet-body"></div></div></dialog>
-<div id="rest-bar" class="rest-bar" hidden role="status"></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="live" class="vh" aria-live="polite"></div><div id="rest-bar" class="rest-bar" hidden role="status"></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
 <input id="restore-input" type="file" accept="application/json,.json" hidden>
 <noscript><div class="alert">Astra Coach needs JavaScript to save your logs and open your exercise guides. Enable JavaScript in Safari settings.</div></noscript>
-<script src="./data.js?v=5.2.0" defer></script><script src="./coach-overrides.js?v=5.2.0" defer></script><script src="./data-v5.js?v=5.2.0" defer></script><script src="./engine.js?v=5.2.0" defer></script><script src="./app.js?v=5.2.0" defer></script>
+<script src="./data.js?v=5.3.0" defer></script><script src="./coach-overrides.js?v=5.3.0" defer></script><script src="./data-v5.js?v=5.3.0" defer></script><script src="./engine.js?v=5.3.0" defer></script><script src="./app.js?v=5.3.0" defer></script>
 </body></html>

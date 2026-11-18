@@ -500,6 +500,11 @@ dialog[open]::backdrop{animation:sheet-fade var(--dur-sheet) var(--ease-out)}
 .sheet-inner{padding:0 var(--s4) calc(var(--s7)*2 + var(--s2) + var(--safe))}/* the last button of a long sheet scrolls clear of the toast lane (a 2-line toast tops out at 67px + safe) */
 .sheet-top{position:sticky;top:0;z-index:3;height:56px;margin:0 calc(-1*var(--s4)) var(--s2);padding:var(--s1) var(--s3);display:flex;justify-content:flex-end;align-items:center;background:var(--sheet)}
 .drag-handle{position:absolute;top:var(--s2);left:calc(50% - 18px);width:36px;height:5px;border-radius:3px;background:var(--faint)}
+.drag-handle::before{content:'';position:absolute;inset:-8px -72px -31px}/* 44px tall, 180px wide grab area; the visible bar is unchanged */
+.sheet-top{touch-action:none}/* the drag zone only: the sheet's content keeps its normal scroll */
+.sheet-top .icon-btn{touch-action:manipulation}
+dialog.dragging{transition:none;will-change:transform;animation:none}
+dialog.snap{transition:transform 250ms var(--ease-spring)}
 .sheet-heading{margin:var(--s1) 0 var(--s4)}
 .sheet-heading h2{font:var(--t-title3);letter-spacing:0}
 .media{position:relative;display:grid;place-items:center;min-height:190px;margin:var(--s3) 0 var(--s2);overflow:hidden;background:var(--media);border:0;border-radius:var(--r-card)}/* the exercise photos are light, so their mat stays light in every theme */
@@ -590,9 +595,17 @@ dialog[open]::backdrop{animation:sheet-fade var(--dur-sheet) var(--ease-out)}
 button,a,summary,.switch-row{transition:transform var(--dur-quick) var(--ease-out),background-color var(--dur-quick) var(--ease-out),opacity var(--dur-quick) var(--ease-out),color var(--dur-quick) var(--ease-out)}
 button:not(:disabled):active,a:active,summary:active,.switch-row:active{transform:scale(.97);transition-duration:var(--dur-press)}
 /* Theme change: html.theme-anim (see Theme tokens) cross-fades every colour token over --dur-theme, so backgrounds, text, borders, gradients and shadows all follow. app.js adds the class after first paint, so the first load never animates. */
+/* Tab changes (v5.3): app.js wraps them in document.startViewTransition. A short calm crossfade with a small upward settle; the tab bar, top bar and sidebar are their own layers, so they stay put. */
+.bottom-nav{view-transition-name:tabbar}.topbar{view-transition-name:topbar}.sidebar{view-transition-name:sidebar}
+::view-transition-group(tabbar),::view-transition-group(topbar),::view-transition-group(sidebar){animation-duration:0s}
+::view-transition-old(root){animation:vt-out 180ms var(--ease-out) both}
+::view-transition-new(root){animation:vt-in 180ms var(--ease-out) both}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0;transform:translateY(8px)}}
 /* one reduced-motion block: no transforms, no animation, no smooth scroll, and no theme cross-fade (the * rule covers html.theme-anim: the theme switches instantly) */
 @media (prefers-reduced-motion:reduce){
 *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 button:not(:disabled):active,a:active,summary:active,.switch-row:active{transform:none!important}
 }
 
@@ -641,10 +654,10 @@ dialog[open]{animation-name:sheet-pop}
 /* A4 · check-in: warning-symptom question as a required two-option segmented radio group */
 .choice{border:0;margin:0;padding:0;min-width:0}
 .choice legend{padding:0;font:var(--t-footnote);color:var(--muted)}
-.choice-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);margin-top:var(--s2)}
+.choice-row{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:var(--s2);margin-top:var(--s2)}
 .choice-opt{position:relative;display:flex;margin:0;color:var(--text)}
 .choice-opt input{position:absolute;inset:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
-.choice-opt span{flex:1;display:flex;align-items:center;justify-content:center;min-height:56px;padding:var(--s2) var(--s3);border-radius:var(--r-control);background:var(--fill);color:var(--text);font:var(--t-headline);text-align:center;transition:background-color var(--dur-quick) var(--ease-out),transform var(--dur-press) var(--ease-out)}
+.choice-opt span{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:center;min-height:56px;padding:var(--s2) var(--s3);border-radius:var(--r-control);background:var(--fill);color:var(--text);font:var(--t-headline);text-align:center;transition:background-color var(--dur-quick) var(--ease-out),transform var(--dur-press) var(--ease-out)}
 .choice-opt:active span{transform:scale(.97)}
 .choice-opt input:checked+span{background:var(--accent-fill);color:var(--on-accent)}
 .choice-opt.warn input:checked+span{background:var(--warn);color:var(--on-warn)}
@@ -732,6 +745,10 @@ dialog[open]{animation-name:sheet-pop}
 /* A13 · while the rest bar is up (body.resting, set by updateRest) the last row must stay reachable and the toast must not cover the timer controls */
 body.resting main{padding-bottom:72px}
 @media (max-width:899px){body.resting .toast{bottom:calc(156px + var(--safe))}}
+/* v5.3 · previous-set caption under a set row's inputs */
+.set-prev{grid-column:2/-2;margin:0;padding:0 2px;color:var(--muted);font:var(--t-caption);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.set-row+.set-prev{margin:0 0 var(--s1) calc(32px + var(--s2))}/* when the caption follows the row instead of sitting in its grid */
+.set-prev:empty{display:none}
 /* ===== end v5.1 components ===== */
 
 /* ===== v5.2 · Appearance sheet: four radio cards (Auto, Daylight, Energy, Night Glow), each with a swatch drawn from that theme's own tokens ===== */

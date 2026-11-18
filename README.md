@@ -1,6 +1,6 @@
 # Astra Coach — on-device edition
 
-A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.2.0.
+A functional, iPhone-first progressive web app for strength, back-resilient training, endurance, nutrition and progress tracking. Version 5.3.0.
 
 ## Use
 
@@ -19,6 +19,15 @@ No package install or build is required. To preview locally: `python3 -m http.se
 - Dated weight/waist history, trend chart, two-week averages, workout and cardio journals.
 - Conservative readiness checks, source credits, JSON backup export and validated restore.
 - Versioned service worker. App-shell offline access after a successful online load; photo-library download available from More.
+
+### New in v5.3: feels native
+
+- **Swipe a sheet down to dismiss it** from the grabber or header (a drag over 120 px, or a quick flick); a short drag snaps back, and scrolling inside a sheet is untouched.
+- **No toast over your buttons.** Saving a set no longer covers Skip / Swap / Next; the row tint, haptic and rest timer confirm it, and a screen reader hears "Set 1 saved".
+- **Keyboard flow.** On the number pad, Next moves kg → reps → effort; Enter on effort saves the set and jumps to the next one.
+- **Last time under each set.** "Last: 62.5 × 7" now sits under the inputs instead of clipping beside the set number. Effort's hint reads "1–10".
+- **Tab changes crossfade** where the browser supports view transitions (and not with Reduce Motion).
+- Sheet subtitles use sentence case ("Build phase · …").
 
 ### New in v5.2: three looks, and Auto
 
